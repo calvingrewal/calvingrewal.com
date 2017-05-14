@@ -1,0 +1,29 @@
+#hero{
+	
+	height: 600px;
+	
+	background-image: url(../images/triangles.png);
+	
+	text-align: center;
+	color: #eee;
+
+}
+#hero h1{
+	position: relative;
+	font-size: 5em;
+	margin-bottom: 25px;
+
+}
+#hero h2{
+	position: relative;
+	font-size: 2em;
+
+}
+#hero div{
+
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+
+}

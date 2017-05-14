@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco');
+nav{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		
+    position: fixed;
+		top: 0;
+		
+		box-sizing: border-box;
+		width: 100%;
+		height: 80px;
+		
+  	opacity: 1;
+    background-color: #000;
+    
+		padding: 0 50px;
+		font-size: 1.2em;
+		
+		z-index: 1;
+		
+		color: white;
+
+}
+nav a,
+nav a:visited{
+color: white;
+}
+nav h1{
+
+	margin: 0;
+	font-size: 1.75em;
+	order: 1;
+}
+ul{
+
+	padding: 0;
+	margin: 0;
+	order: 2;
+}
+li{
+    
+    display: inline-block;
+    padding: 20px;
+		transition: background-color 300ms ease;
+}
+li:last-child{
+
+    margin-right: none;
+
+}
+li:hover{
+   background-color: #7fc800;
+
+}
+nav h1, li{
+
+	padding: 30px 20px;
+}
+i{
+  margin-right: 15px;
+  vertical-align: baseline;
+}
+nav li.active {
+	background-color:  #7fc800;
+}
+
