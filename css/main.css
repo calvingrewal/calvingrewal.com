@@ -1,7 +1,39 @@
-@import url(reset.css);
-@import url(styles.css);
-@import url(hero.css);
-@import url(nav.css);
-@import url(skills.css);
-@import url(projects.css);
-@import url(contact.css);
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import url('reset.css');
+@import url('nav.css');
+@import url('hero.css');
+@import url('skills.css');
+@import url('projects.css');
+@import url('contact.css');
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+section {
+	padding: 40px;
+	height: 500px;
+	text-align: center;
+}
+h1:first-child,
+h2 {
+	color: #062f4f;
+	color: white;
+}
+h1 {
+
+	font-size: 4em;
+
+}
+h2 {
+	font-size: 3em;
+}
+.container {
+	box-sizing: border-box;
+	display: flex;
+	margin: 20px auto 0 auto;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+a {
+text-decoration: none;
+}

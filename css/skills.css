@@ -1,13 +1,13 @@
 #skills{
-	
+
 	overflow: hidden;
-	
+
 	background-image: url(../images/arrows.png);
 
 	color: #ddd;
-	
+
 	position: relative;
-	
+
 	height: auto;
 
 }
@@ -17,26 +17,26 @@
 	justify-content: space-between;
 	width: 70%;
 	margin: 0 auto;
-	
+
 }
 .skill-group div{
 	font-size: 1.6em;
 	text-align: center;
 	margin: 0 0 20px 0;
-	
+
 	/*background-color: rgba(127,255,0,.7);*/
 	background-color: rgba(162,57,202,.7);
 	box-shadow: 4px 4px 5px 2px rgba(0,0,0,.3);
-	
+
 	width: 150px;
 	height: 150px;
-	
+
 	transition: all 100ms;
 	position: relative;
 }
 .skill-group div:hover{
 		box-shadow: 3px 5px 8px 5px rgba(0,0,0,.3);
-		
+
 }
 
 .skill-group span{
@@ -45,5 +45,3 @@
 	left: 50%;
 	transform: translate(-50%,-50%);
 }
-
-
