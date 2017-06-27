@@ -1,41 +1,37 @@
-//$(document).scroll( function() {
-//	var top = $(document).scrollTop();
-//	
-//	$('#hero h1').css('bottom',top/6);
-//	$('#hero h1').css('right',top/4);
-//	
-//	$('#hero h2').css('bottom',top/4);
-//	$('#hero h2').css('left',top/4);
-//
-//});
-//
+var sections = [
+  document.getElementById('hero'),
+	document.getElementById('skills'),
+	document.getElementById('projects'),
+	document.getElementById('contact')
+]
+var navHeight = document.querySelector('nav').scrollHeight
+var distances = []
+for (var i=0; i<sections.length; i++) {
+  if (i > 0) {
+      distances[i] = sections[i].scrollHeight + distances[i-1]
+  } else {
+    distances[i] = sections[i].scrollHeight - navHeight
+  }
+}
 
-	var distances = {
-		hero: document.getElementById('hero'),
-		skills: document.getElementById('skills'),
-		projects: document.getElementById('projects'),
-		contact: document.getElementById('contact')
-	};
-	var icons = {
-		hero: '.fa-home',
-		skills: '.fa-wrench',
-		projects: '.fa-book',
-		contact: '.fa-envelope-o',
-	};
+var icons = {
+	hero: '.fa-home',
+	skills: '.fa-wrench',
+	projects: '.fa-book',
+	contact: '.fa-envelope-o',
+};
 //Scroll Spy
 window.addEventListener('scroll', function() {
 	var top = document.body.scrollTop;
-
 	removeActive();
-	if (top<420){
-		document.querySelector('.fa-home').parentElement.parentElement.className += ' active';
-	} else if(top<1200){
-		document.querySelector('.fa-wrench').parentElement.parentElement.className += ' active';
-	} else if (top<1700){
-		document.querySelector('.fa-book').parentElement.parentElement.className += ' active';
-	} else {
-		document.querySelector('.fa-envelope-o').parentElement.parentElement.className += ' active';
-	}
+  for (var i=0; i < distances.length; i++) {
+    if (top < distances[i]) {
+        var selector = 'nav ul li:nth-of-type(' + (i+1) + ')'
+        console.log(selector);
+        document.querySelector(selector).className += ' active'
+        break;
+    }
+  }
 })
 function removeActive() {
 	for (section in icons){
@@ -43,34 +39,34 @@ function removeActive() {
 	}
 }
 
-document.querySelector('form').onsubmit = function(e){
+document.querySelector('form').onsubmit = (e) => {
         var error = "";
         if (document.getElementById('emailInput').value === ''){
-        
+
             error+="The email field is required.<br>"
 
-        } 
+        }
 				else if(!validateEmail(document.getElementById('emailInput').value)){
 					error += "Please enter a valid email. <br>"
 				}
         if (document.getElementById('subjectInput').value === ''){
-        
+
             error+="The subject field is required.<br>"
 
         }
         if (document.getElementById('bodyInput').value === ''){
-        
+
             error+="The body field is required.<br>"
 
         }
         if(error!=""){
 						document.querySelector('.error').innerHTML = '<div><p><strong>There were error(s) in your form:</strong></p>' + error + '</div>';
-            
+
             return false;
         } else{
-        
+
           return true;
-        
+
         }
 };
 function validateEmail(email) {
