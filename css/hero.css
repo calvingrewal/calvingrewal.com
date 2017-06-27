@@ -1,9 +1,9 @@
 #hero{
-	
+
 	height: 600px;
-	
+
 	background-image: url(../images/triangles.png);
-	
+
 	text-align: center;
 	color: #eee;
 
@@ -14,7 +14,7 @@
 	margin-bottom: 25px;
 
 }
-#hero h2{
+#hero h3{
 	position: relative;
 	font-size: 2em;
 

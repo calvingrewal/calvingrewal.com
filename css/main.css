@@ -5,6 +5,7 @@
 @import url('skills.css');
 @import url('projects.css');
 @import url('contact.css');
+@import url('footer.css');
 
 body {
     font-family: "Roboto", sans-serif;
@@ -16,15 +17,14 @@ section {
 }
 h1:first-child,
 h2 {
-	color: #062f4f;
 	color: white;
 }
-h1 {
+h2 {
 
 	font-size: 4em;
 
 }
-h2 {
+h3 {
 	font-size: 3em;
 }
 .container {
