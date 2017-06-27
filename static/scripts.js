@@ -27,7 +27,7 @@ window.addEventListener('scroll', function() {
   for (var i=0; i < distances.length; i++) {
     if (top < distances[i]) {
         var selector = 'nav ul li:nth-of-type(' + (i+1) + ')'
-        console.log(selector);
+
         document.querySelector(selector).className += ' active'
         break;
     }
@@ -40,37 +40,38 @@ function removeActive() {
 }
 
 document.getElementById('submit').onclick = function(e) {
-  console.log('CLICKED');
   e.preventDefault()
   var error = "";
 
   var emailInput = document.getElementById('emailInput').value
   var subjectInput = document.getElementById('subjectInput').value
   var bodyInput = document.getElementById('bodyInput').value
+  document.querySelector('.error').className = 'error'
   if (emailInput === ''){
 
-      error+="The email field is required.<br>"
+      error+="<p>The email field is required.</p>"
 
   }
 	else if(!validateEmail(emailInput)){
-		error += "Please enter a valid email. <br>"
+		error += "<p>Please enter a valid email. </p>"
 	}
   if (subjectInput === ''){
 
-      error+="The subject field is required.<br>"
+      error += "<p>The subject field is required.</p>"
 
   }
   if (bodyInput === ''){
 
-      error+="The body field is required.<br>"
+      error += "<p>The body field is required.</p>"
 
   }
   if(error !== ""){
-			document.querySelector('.error').innerHTML = '<div><p><strong>There were error(s) in your form:</strong></p>' + error + '</div>';
-
+      console.log('ERROR');
+			document.querySelector('.error').innerHTML = '<p><strong>There were error(s) in your form:</strong></p>' + error;
+      document.querySelector('.error').className += ' visible'
       return false;
   } else {
-    console.log('NO ERRORS');
+
     fetch('/contact', {
       method: 'POST',
       headers: {
@@ -86,9 +87,12 @@ document.getElementById('submit').onclick = function(e) {
       .then(res => res.json())
       .then(response => {
         if (response.success){
-          alert('emeil sent')
+          document.getElementById('emailInput').value = ''
+          document.getElementById('subjectInput').value = ''
+          document.getElementById('bodyInput').value = ''
+          alert('email sent')
         } else {
-          alert('failed')
+          alert('email failed to send')
         }
       })
     return true;
