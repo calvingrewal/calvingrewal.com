@@ -64,9 +64,11 @@ button{
 }
 #contact a,
 #contact a:visited{
-color: black;
+  color: black;
 }
-
+#contact label {
+  color: #eeeeee;
+}
 #contact i{
 	margin: 0;
 	font-size: 6em;

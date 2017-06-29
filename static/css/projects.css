@@ -1,13 +1,14 @@
 #projects{
-	background-image: url(../images/wave.png)
+	background-image: url(../images/wave.png);
 }
 #projects .container{
-	margin-top: 25px;
+	margin-top: 55px;
 }
 .project{
 	width: 225px;
 	height: auto;
 	box-sizing: border-box;
+  color: #fafafa;
 }
 .project img{
 	width: 100%;
@@ -16,8 +17,8 @@
 	display: inline-block;
 }
 .project > p{
-	font-size: 2.5em;
-	margin: 0 0 16px 0;
+	font-size: 2em;
+	margin: 0 0 26px 0;
 }
 .img-wrap{
 	box-sizing: border-box;
