@@ -1,10 +1,10 @@
-#projects{
+#projects {
 	background-image: url(../images/wave.png);
 }
-#projects .container{
+#projects .container {
 	margin-top: 55px;
 }
-.project{
+.project {
 	width: 225px;
 	height: auto;
 	box-sizing: border-box;
@@ -13,17 +13,17 @@
 #projects a {
   color: #fafafa
 }
-.project img{
+.project img {
 	width: 100%;
 	min-height: 100%;
 	z-index: 1;
 	display: inline-block;
 }
-.project > h4{
+.project > header {
 	font-size: 2em;
 	margin: 0 0 26px 0;
 }
-.img-wrap{
+figure {
 	box-sizing: border-box;
 	position: relative;
 	margin: 0;
@@ -33,7 +33,7 @@
 	overflow:hidden;
 }
 
-.caption{
+figcaption {
 	box-sizing: border-box;
 	line-height: 1.2;
 	position: absolute;
@@ -46,29 +46,29 @@
 	transform: translate(-50%,-50%);
   z-index: 2
 }
-.img-wrap:hover .caption{
+figure:hover figcaption {
 	display: inline-block;
 	transform-origin: bottom;
 	animation: grow 500ms ease-in-out forwards;
 }
-.img-wrap:hover img{
+figure:hover img {
 	animation: disappear 400ms ease-in-out forwards;
 }
-@keyframes grow{
-	0%{
+@keyframes grow {
+	0% {
 		opacity: 0;
 		transform: translate(-50%,-50%) scaleY(.1);
 	}
-	100%{
+	100% {
 		opacity: 1;
 		transform: translate(-50%,-50%) scaleY(1);
 	}
 }
-@keyframes disappear{
-	0%{
+@keyframes disappear {
+	0% {
 		opacity: 1;
 	}
-	100%{
+	100% {
 		opacity: .1;
 	}
 }
