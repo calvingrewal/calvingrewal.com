@@ -10,13 +10,16 @@
 	box-sizing: border-box;
   color: #fafafa;
 }
+#projects a {
+  color: #fafafa
+}
 .project img{
 	width: 100%;
 	min-height: 100%;
 	z-index: 1;
 	display: inline-block;
 }
-.project > p{
+.project > h4{
 	font-size: 2em;
 	margin: 0 0 26px 0;
 }
@@ -41,6 +44,7 @@
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
+  z-index: 2
 }
 .img-wrap:hover .caption{
 	display: inline-block;
