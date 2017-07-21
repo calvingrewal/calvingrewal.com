@@ -40,7 +40,6 @@ function removeActive() {
 }
 
 document.getElementById('submit').onclick = function(e) {
-  e.preventDefault()
   var error = "";
 
   var emailInput = document.getElementById('emailInput').value
@@ -67,36 +66,10 @@ document.getElementById('submit').onclick = function(e) {
   }
   if(error !== ""){
       console.log('ERROR');
+      e.preventDefault()
 			document.querySelector('.error').innerHTML = '<p><strong>There were error(s) in your form:</strong></p>' + error;
       document.querySelector('.error').className += ' visible'
       return false;
-  } else {
-
-    fetch('/contact', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: emailInput,
-        subject: subjectInput,
-        body: bodyInput
-      })
-    })
-      .then(res => res.json())
-      .then(response => {
-        if (response.success){
-          document.getElementById('emailInput').value = ''
-          document.getElementById('subjectInput').value = ''
-          document.getElementById('bodyInput').value = ''
-          alert('email sent')
-        } else {
-          alert('email failed to send')
-        }
-      })
-    return true;
-
   }
 };
 function validateEmail(email) {
